@@ -15,6 +15,7 @@
 		5283C0631E82063100151810 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5283C0611E82063100151810 /* LaunchScreen.storyboard */; };
 		5283C0941E82154600151810 /* 7651.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5283C0931E82154600151810 /* 7651.jpg */; };
 		5283C0961E8215E400151810 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5283C0951E8215E400151810 /* MaterialView.swift */; };
+		5283C0981E821A4900151810 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5283C0971E821A4900151810 /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		5283C0641E82063100151810 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5283C0931E82154600151810 /* 7651.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7651.jpg; sourceTree = "<group>"; };
 		5283C0951E8215E400151810 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		5283C0971E821A4900151810 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				5283C0951E8215E400151810 /* MaterialView.swift */,
+				5283C0971E821A4900151810 /* ItemCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				5283C0581E82063100151810 /* MainVC.swift in Sources */,
 				5283C0561E82063100151810 /* AppDelegate.swift in Sources */,
 				5283C0961E8215E400151810 /* MaterialView.swift in Sources */,
+				5283C0981E821A4900151810 /* ItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
