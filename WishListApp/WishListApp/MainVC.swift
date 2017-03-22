@@ -130,7 +130,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         item3.created = NSDate()
         item3.title = "Apple TV"
         item3.price = 800
-        item3.details = "I can now install Apps"
+        item3.details = "New Apple TV is now Available..."
         
         ad.saveContext()
         
