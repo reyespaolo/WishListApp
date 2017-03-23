@@ -33,12 +33,15 @@
                                     <segment title="Title"/>
                                 </segments>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="segmentChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="5jC-DU-SXM"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TKd-E5-EVq">
                                 <rect key="frame" x="20" y="132" width="374" height="604"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="150" id="wNK-hl-xBc" customClass="ItemCell" customModule="WishListApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="150" id="wNK-hl-xBc" customClass="ItemCell" customModule="WishListApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wNK-hl-xBc" id="v4N-CU-yWB">
@@ -161,7 +164,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePick" translatesAutoresizingMaskIntoConstraints="NO" id="CeS-dC-gIl">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePick" translatesAutoresizingMaskIntoConstraints="NO" id="CeS-dC-gIl">
                                 <rect key="frame" x="20" y="72" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="3Sb-wA-c9i"/>
@@ -176,6 +179,9 @@
                                     <constraint firstAttribute="height" constant="93" id="FUF-uY-YFR"/>
                                     <constraint firstAttribute="width" constant="100" id="M4n-BX-pAv"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="addButton:" destination="W3c-AN-eVD" eventType="touchUpInside" id="sP6-TA-edL"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ay-rm-UWF" customClass="CustomTextField" customModule="WishListApp" customModuleProvider="target">
                                 <rect key="frame" x="128" y="82" width="266" height="40"/>
@@ -223,6 +229,9 @@
                                 <state key="normal" title="Save Item">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="savePressed:" destination="W3c-AN-eVD" eventType="touchUpInside" id="p7Z-c8-e7p"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Select Store" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ugf-fr-tOi">
                                 <rect key="frame" x="160" y="429" width="94" height="21"/>
@@ -263,8 +272,18 @@
                     <navigationItem key="navigationItem" title="Add / Delete" id="Nk6-wP-wEY">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="Tdf-1f-cRe">
                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="deletePressed:" destination="W3c-AN-eVD" id="O6W-X7-hpO"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="detailsField" destination="Z6I-Dl-svp" id="ByM-wR-UFS"/>
+                        <outlet property="priceField" destination="KaW-FH-VXT" id="Cqg-Mv-e26"/>
+                        <outlet property="storePicker" destination="4lQ-PH-Gni" id="ohb-Au-ZrC"/>
+                        <outlet property="thumbImage" destination="CeS-dC-gIl" id="sPp-Y9-pWW"/>
+                        <outlet property="titleField" destination="7ay-rm-UWF" id="trR-3F-iOb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpp-wH-RaA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -275,7 +294,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XFf-fs-TW8" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="h0l-kq-aQ0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h0l-kq-aQ0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
